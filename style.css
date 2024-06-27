@@ -1,0 +1,216 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variáveis CSS para fácil personalização */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --dark-color: #fff;
+    --font-family: 'Roboto', sans-serif;
+    --max-width: 1200px;
+}
+
+/* Container padrão */
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.header {
+    background: var(--primary-color);
+    color: var(--dark-color);
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* Navegação */
+.nav {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav a {
+    color: var(--dark-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: background 0.1s, color 0.3s;
+}
+
+.nav a:hover {
+    background: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* Seções */
+.section {
+    padding: 3rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    display: block;
+    margin: 0.5rem auto;
+}
+
+.section ul, .section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.section a:hover {
+    text-decoration: underline;
+    color: darken(var(--primary-color), 10%);
+}
+
+.project, .skills, .interests, .languages, .education, .certificates {
+    margin: 2rem 0;
+}
+
+.project h3, .skills ul, .interests ul, .languages ul, .education ul, .certificates ul {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.project ul, .skills ul, .interests ul, .languages ul, .education ul, .certificates ul {
+    list-style: none;
+}
+
+.project ul li, .skills ul li, .interests ul li, .languages ul li, .education ul li, .certificates ul li {
+    background: var(--dark-color);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project ul li:hover, .skills ul li:hover, .interests ul li:hover, .languages ul li:hover, .education ul li:hover, .certificates ul li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .nav{
+        position: static;
+    }
+
+    .nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #575757;
+        position: relative;
+    }
+
+    .nav a:last-child {
+        border-bottom: none;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Transições e animações */
+a {
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.profile-photo {
+    transition: transform 0.3s;
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
+}
+
+.project, .skills, .interests, .languages, .education, .certificates {
+    transition: all 0.3s;
+}
